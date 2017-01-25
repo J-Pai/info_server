@@ -1,0 +1,25 @@
+{
+  "name": "info_server",
+  "version": "1.0.0",
+  "description": "Web Server meant to display information and act as a test bed for various technologies.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://j-pai@bitbucket.org/j-pai/info_server.git"
+  },
+  "keywords": [
+    "Test Bed",
+    "Web Server",
+    "Data Presentation"
+  ],
+  "author": "j-pai",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/j-pai/info_server#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.22"
+  }
+}
