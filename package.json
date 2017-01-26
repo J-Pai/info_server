@@ -19,6 +19,7 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/j-pai/info_server#readme",
   "dependencies": {
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "mongodb": "^2.2.22"
   }

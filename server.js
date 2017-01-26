@@ -2,27 +2,22 @@ var express = require("express");
 var app = express();
 
 var router = express.Router();
-var path = __dirname + '/views/';
 
+// Necessary to allow environment to set PORT
 app.set('port', (process.env.PORT || 80));
 
-router.use(function(req, res, next) {
-    console.log("/" + req.method);
-    next(); 
+app.set('view engine', 'ejs');
+
+router.get('/', function(req, res) {
+    res.render("pages/index");
 });
 
-router.get("/", function(req, res) {
-    res.sendFile(path + "index.html");
+router.get('/about', function(req,res) {
+    res.render('pages/about');
 });
-
-router.get("/about", function(req,res) {
-    res.sendFile(path + "about.html");
-});
-
-app.use("/", router);
 
 app.use("*", function(req,res) {
-    res.sendFile(path + "404.html");
+    res.sendFile("pages/404");
 });
 
 app.listen(app.get('port'), function() {
