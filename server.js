@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 
-var NoSQL = requre('nosql');
+var NoSQL = require('nosql');
 var db = NoSQL.load(__dirname + '/database')
 
 // Necessary to allow environment to set PORT
