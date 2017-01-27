@@ -5,6 +5,8 @@
 
 var express = require("express");
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 var sms = require('./helpers/twilio_sms.js');
 
@@ -50,6 +52,12 @@ app.use(function(req, res, next) {
     return;
 });
 
-app.listen(app.get('port'), function() {
+// Sockets and Web Server Initialization
+
+io.on('connection', function(socket) {
+    console.log('A user has connected...');
+});
+
+http.listen(app.get('port'), function() {
     console.log("Live at Port " + app.get('port'));
 });
