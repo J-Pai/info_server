@@ -4,7 +4,7 @@
   "description": "Web Server meant to display information and act as a test bed for various technologies.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
     "vue": "^2.1.10",
     "mongoose": "^4.7.8",
     "twilio": "^2.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

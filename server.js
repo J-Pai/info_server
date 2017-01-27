@@ -7,9 +7,9 @@ var express = require("express");
 var http = require("http");
 var app = express();
 
-var mongoose = require('mongoose');
-
 var sms = require('./helpers/twilio_sms.js');
+
+var Message = require('./models/message');
 
 // Necessary to allow environment to set PORT
 app.set('port', (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000));
@@ -29,8 +29,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/messages', function(req, res) {
-    res.render('pages/messages');
-})
+    Message.find({}, function (err, msgs) {
+        console.log(msgs);
+        res.render('pages/messages', { messages: msgs });
+    });
+});
+
+app.get('/create_user', function(req, res) {
+    res.render('pages/create_user');
+});
 
 app.get('/about', function(req, res) {
     res.render('pages/about');
