@@ -21,8 +21,7 @@
   "dependencies": {
     "ejs": "^2.5.5",
     "express": "^4.14.0",
-    "mongodb": "^2.2.22",
-    "nosql": "^5.0.0",
+    "mongoose": "^4.7.8",
     "twilio": "^2.11.1"
   }
 }
