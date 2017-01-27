@@ -25,14 +25,13 @@ app.get('/', function(req, res) {
     	host : "www.api.umd.io",
     	path : "v0/courses?semester=201702"
     };
-    var get = http.get(options, function(res) {
+    var get = app.get(options, function(res) {
     	console.log(res);
     });
 });
 
 app.get('/messages', function(req, res) {
     Message.find({}, function (err, msgs) {
-        console.log(msgs);
         res.render('pages/messages', { messages: msgs });
     });
 });
