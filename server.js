@@ -14,7 +14,7 @@ var acc = require('./helpers/account.js');
 
 var Message = require('./models/message');
 
-var Vue = require('Vue');
+var Vue = require('vue');
 // Necessary to allow environment to set PORT
 app.set('port', (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000));
 app.use(express.static('public'));
