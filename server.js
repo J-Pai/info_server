@@ -4,6 +4,7 @@
  */
 
 var express = require("express");
+var http = require("http");
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -20,6 +21,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
     res.render("pages/index");
+    var options = {
+    	host : "www.api.umd.io",
+    	path : "v0/courses?semester=201702"
+    };
+    var get = http.get(options, function(res) {
+    	console.log(res);
+    });
 });
 
 app.get('/messages', function(req, res) {
