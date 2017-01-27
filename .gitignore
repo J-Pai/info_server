@@ -1,2 +1,4 @@
 node_modules
 npm-debug*
+.DS_STORE
+views/.DS_STORE
