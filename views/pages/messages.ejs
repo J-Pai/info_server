@@ -4,10 +4,19 @@
 <html lang="en">
     <head>
         <% include ../partials/head %>
+        <script src="/scripts/vue.js"></script>
     </head>
     <body class="container">
+
         <% include ../partials/header %>
         <main>
+            <div id="app-4">
+              <ol>
+                <li v-for="todo in todos">
+                  {{ todo.text }}
+                </li>
+              </ol>
+            </div>
             <div class="jumbotron">
                 <h2>Messages</h2>
                 <p>The following is a list of messages that were sent to twilio.</p>
@@ -32,6 +41,7 @@
             </div>
         </main>
         <% include ../partials/footer %>
+        <script src="js/messages.js"></script>
     </body>
 </html>
 

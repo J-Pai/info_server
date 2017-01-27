@@ -14,21 +14,17 @@ var acc = require('./helpers/account.js');
 
 var Message = require('./models/message');
 
+var Vue = require('Vue');
 // Necessary to allow environment to set PORT
 app.set('port', (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000));
+app.use(express.static('public'));
+app.use('/scripts', express.static(__dirname + '/node_modules/vue/dist/'));
 
 // Render views
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
     res.render("pages/index");
-    var options = {
-        host : "www.api.umd.io",
-        path : "v0/courses?semester=201702"
-    };
-    var get = app.get(options, function(res) {
-        console.log(res);
-    });
 });
 
 app.get('/messages', function(req, res) {
