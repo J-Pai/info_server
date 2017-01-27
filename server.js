@@ -22,7 +22,11 @@ app.get('/', function(req, res) {
 
 app.get('/messages', function(req, res) {
     res.render('pages/messages');
-})
+});
+
+app.get('/create_user', function(req, res) {
+    res.rend('pages/create_user')
+});
 
 app.get('/about', function(req, res) {
     res.render('pages/about');

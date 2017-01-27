@@ -13,7 +13,9 @@ module.exports = {
         console.log('receive_sms POST request');
         twilio.messages.list({
         }, function(err, data){
-            console.log(data.messages[0].from + ":" + data.messages[0].body);
+            console.log(req);
+            //console.log(data.messages[0].from + ":" + data.messages[0].body);
+            //console.log("Full Message Body:\n" + data.messages[0]);
         });
         res.end();
     }
