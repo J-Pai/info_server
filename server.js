@@ -36,7 +36,7 @@ app.get('/messages', function(req, res) {
 
 app.get('/socket-messages', function(req,res) {
     Message.find({}, '-_id time_sent body', function (err, msgs) {
-        res.render('pages/messages', {messages: msgs });
+        res.render('pages/socket-messages', {messages: msgs });
     });
 });
 
