@@ -28,6 +28,7 @@ var userSchema = new Schema({
     meta: {
         verified: boolean,
         reserved: [String],
+        phone: String
     }
     created_at: Date,
     updated_at: Date

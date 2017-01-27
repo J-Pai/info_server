@@ -14,16 +14,20 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Time Sent</th>
                             <th>Message</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <% for (let i = 0; i < messages.length; i++) { %>
                             <tr>
-                                <td><%= messages[i].time_sent %></td>
+                                <td width="50em"><%= i %></td>
+                                <td width="300em"><%= messages[i].time_sent %></td>
                                 <td><%= messages[i].body %></td>
                             </tr>
                         <% } %>
-                    </thead>
+                    </tbody>
                 </table>
             </div>
         </main>
