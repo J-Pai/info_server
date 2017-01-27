@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/messages', function(req, res) {
-    Message.find({}, function (err, msgs) {
+    Message.find({}, '-_id time_sent body', function (err, msgs) {
         res.render('pages/messages', { messages: msgs });
     });
 });
