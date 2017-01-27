@@ -19,6 +19,7 @@ var Vue = require('Vue');
 app.set('port', (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000));
 app.use(express.static('public'));
 app.use('/scripts', express.static(__dirname + '/node_modules/vue/dist/'));
+app.use('/scripts', express.static(__dirname + '/node_molules/'))
 
 // Render views
 app.set('view engine', 'ejs');
@@ -30,6 +31,12 @@ app.get('/', function(req, res) {
 app.get('/messages', function(req, res) {
     Message.find({}, '-_id time_sent body', function (err, msgs) {
         res.render('pages/messages', { messages: msgs });
+    });
+});
+
+app.get('/socket-messages', function(req,res) {
+    Message.find({}, '-_id time_sent body', function (err, msgs) {
+        res.render('pages/messages', {messages: msgs });
     });
 });
 

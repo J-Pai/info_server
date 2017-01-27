@@ -1,24 +1,19 @@
-<!-- views/pages/messages.ejs -->
-<!DOCTYPE html>
-
+<!-- views/pages/socket-messages.ejs -->
 <html lang="en">
     <head>
         <% include ../partials/head %>
-        <script src="/scripts/vue.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+        </script>
     </head>
     <body class="container">
         <% include ../partials/header %>
         <main>
-            <div id="app-4">
-              <ol>
-                <li v-for="todo in todos">
-                  {{ todo.text }}
-                </li>
-              </ol>
-            </div>
             <div class="jumbotron">
-                <h2>Messages</h2>
+                <h2>Messages with Socket.io</h2>
                 <p>The following is a list of messages that were sent to twilio.</p>
+                <p>The table should auto update through the use of sockets</p>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -28,19 +23,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (let i = 0; i < messages.length; i++) { %>
-                            <tr>
-                                <td width="50em"><%= i %></td>
-                                <td width="300em"><%= messages[i].time_sent %></td>
-                                <td><%= messages[i].body %></td>
-                            </tr>
+                        <% for (let i = 0; i< messages.length; i++) { %>
+                            <td width="50em"><%= i %></td>
+                            <td width="300em"><%= messages[i].time_sent %></td>
+                            <td><%= messages[i].body %></td>
                         <% } %>
                     </tbody>
                 </table>
             </div>
         </main>
         <% include ../partials/footer %>
-        <script src="js/messages.js"></script>
     </body>
 </html>
-
