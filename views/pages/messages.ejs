@@ -10,7 +10,20 @@
             <div class="jumbotron">
                 <h2>Messages</h2>
                 <p>The following is a list of messages that were sent to twilio.</p>
-
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Time Sent</th>
+                            <th>Message</th>
+                        </tr>
+                        <% for (let i = 0; i < messages.length; i++) { %>
+                            <tr>
+                                <td><%= messages[i].time_sent %></td>
+                                <td><%= messages[i].body %></td>
+                            </tr>
+                        <% } %>
+                    </thead>
+                </table>
             </div>
         </main>
         <% include ../partials/footer %>

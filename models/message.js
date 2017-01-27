@@ -1,6 +1,6 @@
 /**
- * user.js
- * This is the model for user accounts
+ * message.js
+ * THis is the model for messages
  */
 
 // Setup connection
@@ -12,27 +12,26 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    console.log("user.js connected to mongodb..."); 
+    console.log("message.js connected to mongodb...");
 });
+
 
 // Create schema
-var userSchema = new Schema({
-    name: String,
-    username: {
+var msgSchema = new Schema({
+    sid: {
         type: String, required: true, unique: true
     },
-    password: {
-        type: String,
-        required: true
+    time_sent: {
+        type: Date, required: true
     },
-    meta: {
-        verified: boolean,
-        reserved: [String],
+    from: {
+        type: String, required: true
+    },
+    body: {
+        type: String, required: true
     }
-    created_at: Date,
-    updated_at: Date
 });
 
-var User = mongoose.model('User', userSchema);
+var Message = mongoose.model('Message', msgSchema);
 
-module.exports = User;
+module.exports = Message;
