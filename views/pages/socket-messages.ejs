@@ -1,11 +1,10 @@
 <!-- views/pages/socket-messages.ejs -->
+<!DOCTYPE html>
+
 <html lang="en">
     <head>
         <% include ../partials/head %>
         <script src="/socket.io/socket.io.js"></script>
-        <script>
-            var socket = io();
-        </script>
     </head>
     <body class="container">
         <% include ../partials/header %>
@@ -28,12 +27,14 @@
                                 <td width="50em"><%= i %></td>
                                 <td width="300em"><%= messages[i].time_sent %></td>
                                 <td><%= messages[i].body %></td>
-                            </tr>
                         <% } %>
                     </tbody>
                 </table>
             </div>
         </main>
         <% include ../partials/footer %>
+        <script>
+            var socket = io();
+        </script>
     </body>
 </html>
