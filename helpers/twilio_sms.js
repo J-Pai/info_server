@@ -3,8 +3,8 @@
  * Contains code dealing with twilio's API
  */
 
-var accountSid = 'AC08f5eb5faf00625bdbc62559730c4308';
-var authToken = '0ab00ab4848fd04cf32547dbd555c752';
+var accountSid = '';
+var authToken = '';
 var requestKey = 'eepFt0qy5i2DKb40Fs69v5XIQA2eFkFE';
 
 var twilio = require('twilio')(accountSid, authToken);
