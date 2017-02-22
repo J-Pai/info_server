@@ -5,7 +5,7 @@
 
 // Setup connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://info_server:Mech*123@ds133249.mlab.com:33249/jpai_mongodb_main');
+mongoose.connect('');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
